@@ -243,7 +243,38 @@ $(document).ready(function () {
 
 
         // ajax post call for extend material 
+        $.ajax({
+            url: "http://13.126.33.197:8000/sap/opu/odata/sap/ZMASTER_MANAGEMENT_MATERIAL_SRV/",
+            type: "GET",
+            beforeSend: function (xhr) {
+                // xhr.setRequestHeader("Authorization", "Basic " + btoa("wp_abap" + ":" + "sap@123"));
+                xhr.setRequestHeader("X-CSRF-Token", "Fetch");
+            },
 
+            complete: function (xhr) {
+                token = xhr.getResponseHeader("X-CSRF-Token");
+
+                $.ajax({
+                    url: "http://13.126.33.197:8000/sap/opu/odata/sap/ZMASTER_MANAGEMENT_MATERIAL_SRV/es_material_extend",
+                    data: JSON.stringify(extData),
+                    type: "POST",
+                    dataType: "json",
+                    contentType: "Application/json",
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader('X-CSRF-Token', token);
+                        xhr.setRequestHeader("Authorization", "Basic " + btoa("wp_abap" + ":" + "sap@123"));
+                    },
+                    success: function (result) {
+                        $("#extendMaterialTable").css('display', 'none');
+                        alert(result.d.EvMessage);
+                    },
+                    error: function (xhr, status, err) {
+                        alert("material extending failed. \n Server Error");
+                        console.log(err);
+                    }
+                });
+            }
+        });
     });
 
 
