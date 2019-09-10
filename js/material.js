@@ -281,6 +281,8 @@ $(document).ready(function () {
 
     // view material details page
 
+
+
     $("#viewMaterial").on("click", function () {
         for (i = 0; i < Materiallist.d.results.length; i++) {
             if ($("#materialInputName").val().toUpperCase() === Materiallist.d.results[i].MaterialName.toUpperCase()) {
