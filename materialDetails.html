@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./lib/jQuery.js"></script>
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/materialDetails.css">
+    <title>Material Details</title>
+</head>
+
+<body>
+    <ul id="profileMenu">
+        <li id="viewProfile" class="profileMenuItem">View Profile</li>
+        <li id="changePassword" class="profileMenuItem">Change Password</li>
+        <li id="logOut" class="profileMenuItem">Log Out</li>
+    </ul>
+
+    <div id="navbar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" id="closeNav">×</a>
+        <img src="./images/profile1.jpg" alt="Profile image" id="profileImage">
+        <a href="./dashboard.html"><img src="./images/Dashboard.png" alt="Customer icon"> Dashboard</a>
+        <a href="./material.html"><img src="./images/material.png" alt="material icon"> Material</a>
+        <a href="./customer.html"><img src="./images/Customer.png" alt="Customer icon"> Customer</a>
+        <a href="./Vendor.html"><img src="./images/Vendor.png" alt=""> Vendor</a>
+        <a href="#"><img src="./images/Assets.png" alt=""> Assets</a>
+        <a href="#"><img src="./images/Cataloug.png" alt=""> Catalog</a>
+        <a href="#"><img src="./images/Reports.png" alt=""> Reports</a>
+        <a href="#"><img src="./images/task.png" alt=""> My Tasks</a>
+    </div>
+
+    <div class="headBar">
+        <button class="openbtn" id="openNav">☰ Menu</button>
+    </div>
+    <ul id="navLinks">
+        <li><a href="#generalHead">General</a></li>
+        <li><a href="#storageHead">Storage</a></li>
+        <li><a href="#valueHead">Value</a></li>
+        <li><a href="#stockDetailsHead">Stock Details</a></li>
+    </ul>
+    <div class="container">
+
+        <p class="section" id="generalHead">General</p>
+        <div id="general">
+            <label for="name">Name</label>
+            <input type="text" id="name">
+            <label for="storageLocation">Storage Location</label>
+            <input type="text" id="storageLocation">
+            <label for="number">Number</label>
+            <input type="text" id="number">
+            <label for="plant">Plant</label>
+            <input type="text" id="plant">
+            <label for="text">Text</label>
+            <input type="text" id="text">
+            <label for="unitOfMeasure">Unit of Measure</label>
+            <input type="text" id="unitOfMeasure">
+            <label for="groupText">Group Text</label>
+            <input type="text" id="groupText">
+            <label for="purchaseGroup">Purchase Group</label>
+            <input type="text" id="purchaseGroup">
+            <label for="longText">Long Text</label>
+            <textarea type="text-d" id="longText"></textarea>
+        </div>
+
+        <p class="section" id="storageHead">Storage</p>
+        <div id="storage">
+            <label for="storagePeriod">Storage Period</label>
+            <input type="text" id="storagePeriod">
+            <label for="shelfLife">Shelf Life</label>
+            <input type="text" id="shelfLife">
+        </div>
+
+        <p class="section" id="valueHead">Value</p>
+        <div id="value">
+            <label for="movingPrice">Moving Price</label>
+            <input type="text" id="movingPrice">
+            <label for="totalValue">Total Value</label>
+            <input type="text" id="totalValue">
+            <label for="standardPrice">Standard Price</label>
+            <input type="text" id="standardPrice">
+            <label for="lastPriceUpdate">Last Price Update</label>
+            <input type="text" id="lastPriceUpdate">
+        </div>
+
+        <p class="section" id="stockDetailsHead">Stock Details</p>
+        <div id="stockDetails">
+            <label for="Unrestricted">Unrestricted</label>
+            <input type="text" id="Unrestricted">
+            <label for="RestrictedUse">Restricted-Use Stock</label>
+            <input type="text" id="RestrictedUse">
+            <label for="Blocked">Blocked</label>
+            <input type="text" id="Blocked">
+            <label for="Returns">Returns</label>
+            <input type="text" id="Returns">
+            <label for="StockinTransfer">Stock in Transfer</label>
+            <input type="text" id="StockinTransfer">
+            <label for="InQualityInspection">In Quality Inspection</label>
+            <input type="text" id="InQualityInspection">
+            <label for="InTransfer">In Transfer (Plant)</label>
+            <input type="text" id="InTransfer">
+            <label for="RestrictedConsignment">Restricted Consignment</label>
+            <input type="text" id="RestrictedConsignment">
+            <label for="StockinTransit">Stock in Transit</label>
+            <input type="text" id="StockinTransit">
+            <label for="Consignmentininspetion">Consignment in inspetion</label>
+            <input type="text" id="Consignmentininspetion">
+            <label for="BlockedConsignment ">Blocked Consignment </label>
+            <input type="text" id="BlockedConsignment">
+            <label for="UnrestrictedConsignment">Unrestricted Consignment</label>
+            <input type="text" id="UnrestrictedConsignment">
+        </div>
+    </div>
+
+    <img src="./images/edit.svg" alt="edit material" id="editMaterial">
+
+    <script src="./js/global.js"></script>
+    <script src="./js/materialDetails.js"></script>
+</body>
+
+</html>

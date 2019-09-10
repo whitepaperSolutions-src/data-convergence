@@ -1,0 +1,75 @@
+.container{
+width: 80%;
+margin: 0 0 50px 10%;
+}
+
+#navLinks{
+    list-style: none;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;    
+    position: fixed;
+    top: -5px;
+    right: 10px;
+    z-index: 3;
+}
+#navLinks a{
+    text-decoration: none;
+    color: #c9c9c9;
+    margin: 5px 10px;
+}
+#navLinks a:hover{
+    color: white;
+}
+
+.section{
+    background: #0e3d50;
+    color: white;
+    padding: 10px 20px;
+}
+
+#general,
+#value,
+#stockDetails,
+#storage{
+    display: grid;
+    grid-template-columns: repeat(2, 150px 1fr);
+    align-items: center;
+    justify-content: center;
+    grid-gap: 10px;
+}
+
+#general label,
+#stockDetails label,
+#value label,
+#storage label{
+    text-align: right;
+}
+#general input,
+#stockDetails input,
+#value input,
+#storage input{
+    margin-left: 10px;
+    padding: 5px;
+    width: 200px;
+}
+
+#longText{
+    grid-column: 2 / 5;
+    width: 700px;
+    height: 50px;
+    margin-left: 10px;
+    padding: 5px;
+}
+
+#editMaterial{
+    width: 40px;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+}
+
+input:disabled,
+textarea:disabled{
+    color: black;
+}

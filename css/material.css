@@ -1,0 +1,141 @@
+
+.container{
+    width: 80%;
+    margin-left: 10%;
+}
+
+/* plant data table  */
+
+#extendMaterialTable{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  flex-direction: column;
+  top: 0vh;
+  left: 0vw;
+  z-index: 3;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.dataTables_scroll  {
+  color: black;
+  cursor: pointer;
+  width: 500px;
+}
+
+.plantSelct{
+  background: #0e3d50 !important;
+  color: #aaaaaa;
+}
+
+#plantTable{
+  text-align: center;
+}
+
+/* create material */
+
+#materialInput{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  flex-direction: column;
+  top: 0vh;
+  left: 0vw;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.9);
+  display: none;
+}
+
+.inputText {
+  font-size: 18px;
+  padding-left: 15px;
+  margin-bottom: 10px;
+  width: 500px;
+  height: 50px;
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: #aaaaaa;
+}
+
+#filterList{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: transparent;
+  max-height: 200px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+#filterList li{
+  background: transparent;
+  color: white;
+  padding: 3px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+/* scroll bar style */
+
+#filterList::-webkit-scrollbar,
+.dataTables_scrollBody::-webkit-scrollbar {
+  background-color: rgba(43, 43, 43, 0.2);
+}
+
+#filterList::-webkit-scrollbar-thumb,
+.dataTables_scrollBody::-webkit-scrollbar-thumb {
+background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Create Material confirmation */
+.createMaterialWarning{
+  position: fixed;
+  top: 35%;
+  left: 35%;
+  background: rgba(255, 255, 255, 0.9);
+  z-index: 4;
+  padding: 20px;
+  text-align: center;
+  color: #0e3d50;
+  font-size: 18px;
+  word-spacing: 0.15em;
+  display: none;
+}
+
+#viewMaterial,
+#extendMaterial,
+#createMaterial,
+#materialselectAll,
+#materialunselectAll,
+#materialExtendToSelected,
+#selectAll,
+#unselectAll,
+#ExtendToSelected{
+  border: none;
+  width: 25px;
+  height: 25px;
+  margin: 10px;
+  cursor: pointer;
+  color: #dfdbdb;
+  font-size: 14px;
+}
+
+#plantLocationLinks{
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+#plantLocationLinks h5{
+  margin: 10px;
+  padding: 5px 15px;
+  border: 1px solid white;
+  color: white;
+  cursor: pointer;
+}

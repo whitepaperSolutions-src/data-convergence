@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./lib/jQuery.js"></script>
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/createMaterial.css">
+    <title>Create Material</title>
+</head>
+
+<body>
+    <ul id="profileMenu">
+        <li id="viewProfile" class="profileMenuItem">View Profile</li>
+        <li id="changePassword" class="profileMenuItem">Change Password</li>
+        <li id="logOut" class="profileMenuItem">Log Out</li>
+    </ul>
+
+    <div id="navbar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" id="closeNav">×</a>
+        <img src="./images/profile1.jpg" alt="Profile image" id="profileImage">
+        <a href="./dashboard.html"><img src="./images/Dashboard.png" alt="Customer icon"> Dashboard</a>
+        <a href="./material.html"><img src="./images/material.png" alt="material icon"> Material</a>
+        <a href="./customer.html"><img src="./images/Customer.png" alt="Customer icon"> Customer</a>
+        <a href="./Vendor.html"><img src="./images/Vendor.png" alt=""> Vendor</a>
+        <a href="#"><img src="./images/Assets.png" alt=""> Assets</a>
+        <a href="#"><img src="./images/Cataloug.png" alt=""> Catalog</a>
+        <a href="#"><img src="./images/Reports.png" alt=""> Reports</a>
+        <a href="#"><img src="./images/task.png" alt=""> My Tasks</a>
+    </div>
+
+    <div class="headBar">
+        <button class="openbtn" id="openNav">☰ Menu</button>
+    </div>
+
+    <div class="container">
+
+        <p class="section" id="generalHead">Create New Material <span>(All fields are mandatory)</span></p>
+
+        <form id="createMaterialForm">
+            <div id="general">
+                <label for="name">Name</label>
+                <input type="text" id="name">
+
+                <label for="materialType">Material Type</label>
+                <input type="text" id="materialType">
+
+                <label for="salesOrganization">Sales Organization</label>
+                <input type="text" id="salesOrganization">
+
+                <label for="partNumber">Part Number</label>
+                <input type="text" id="partNumber">
+
+                <label for="MRPGroup">MRP Group</label>
+                <input type="text" id="MRPGroup">
+
+                <label for="MRPType">MRP Type</label>
+                <input type="text" id="MRPType">
+
+                <label for="MRPController">MRP Controller</label>
+                <input type="text" id="MRPController">
+
+                <label for="PurchaseGroup">Purchase Group</label>
+                <input type="text" id="PurchaseGroup">
+
+                <label for="lotSize">Lot Size</label>
+                <input type="text" id="lotSize">
+
+                <label for="safetyStock">Safety Stock</label>
+                <input type="text" id="safetyStock">
+
+                <label for="qualityActDact">Quality Activate / Deactivate</label>
+                <input type="text" id="qualityActDact">
+
+                <label for="valuationClass">Valuation Class</label>
+                <input type="text" id="valuationClass">
+
+                <label for="storageLocation">Storage Location</label>
+                <select id="storageLocation">
+                </select>
+
+                <label for="plant">Plant</label>
+                <select id="plant">
+                </select>
+
+                <label for="unitOfMeasure">Unit of Measure</label>
+                <select id="unitOfMeasure">
+                    <option value="Standard">Standard Price</option>
+                    <option value="Moving">Moving Price</option>
+                </select>
+
+                <label for="groupText">Group Text</label>
+                <input type="text" id="groupText">
+
+                <label for="purchaseGroup">Purchase Group</label>
+                <input type="text" id="purchaseGroup">
+
+                <div></div>
+                <div></div>
+
+                <label for="longText">Long Text</label>
+                <textarea type="text-d" id="longText"></textarea>
+
+                <label for="priceControl">Price Control</label>
+                <div>
+                    <select id="priceControlSelect">
+                        <option value="Standard">Standard Price</option>
+                        <option value="Moving">Moving Price</option>
+                    </select>
+                    <input type="text" id="priceControl">
+                </div>
+
+
+            </div>
+            <button id="createMaterialButton" type="submit"><img src="./images/send white.svg" alt="send"></button>
+        </form>
+    </div>
+
+    <script src="./js/global.js"></script>
+    <script src="./js/createMaterial.js"></script>
+</body>
+
+</html>

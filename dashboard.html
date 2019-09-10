@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <script src="./lib/jQuery.js"></script>
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/dashboard.css">
+    <title>Dashboard</title>
+</head>
+
+<body>
+
+    <div id="navbar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" id="closeNav">×</a>
+        <img src="./images/profile1.jpg" alt="Profile image" id="profileImage">
+        <a href="./dashboard.html"><img src="./images/Dashboard.png" alt="Customer icon"> Dashboard</a>
+        <a href="./material.html"><img src="./images/material.png" alt="material icon"> Material</a>
+        <a href="./customer.html"><img src="./images/Customer.png" alt="Customer icon"> Customer</a>
+        <a href="./Vendor.html"><img src="./images/Vendor.png" alt=""> Vendor</a>
+        <a href="#"><img src="./images/Assets.png" alt=""> Assets</a>
+        <a href="#"><img src="./images/Cataloug.png" alt=""> Catalog</a>
+        <a href="#"><img src="./images/Reports.png" alt=""> Reports</a>
+        <a href="#"><img src="./images/task.png" alt=""> My Tasks</a>
+    </div>
+    <div class="headBar">
+        <button class="openbtn" id="openNav">☰ Menu</button>
+    </div>
+
+    <ul id="profileMenu">
+        <li id="viewProfile" class="profileMenuItem">View Profile</li>
+        <li id="changePassword" class="profileMenuItem">Change Password</li>
+        <li id="logOut" class="profileMenuItem">Log Out</li>
+    </ul>
+
+    <div class="container">
+        <div class="card" id="material">
+            <h4>Material</h4>
+            <img src="./images/material.png" alt="material icon">
+            <hr>
+            <p>50 / 100</p>
+        </div>
+        <div class="card" id="Customer">
+            <h4>Customer</h4>
+            <img src="./images/Customer.png" alt="Customer icon">
+            <hr>
+            <p>50 / 100</p>
+        </div>
+        <div class="card" id="Vendor">
+            <h4>Vendor</h4>
+            <img src="./images/Vendor.png" alt="">
+            <hr>
+            <p>50 / 100</p>
+        </div>
+        <div class="card" id="Assets">
+            <h4>Assets</h4>
+            <img src="./images/Assets.png" alt="">
+            <hr>
+            <p>50 / 100</p>
+        </div>
+        <div class="card" id="Catalog">
+            <h4>Catalog</h4>
+            <img src="./images/Cataloug.png" alt="">
+            <hr>
+            <p>50 / 100</p>
+        </div>
+        <div class="card" id="Reports">
+            <h4>Reports</h4>
+            <img src="./images/Reports.png" alt="">
+            <hr>
+        </div>
+        <div class="card" id="myTasks">
+            <h4>My Tasks</h4>
+            <img src="./images/task.png" alt="">
+            <hr>
+        </div>
+    </div>
+
+    <button id="add">+</button>
+    <ul id="addMenu">
+        <li id="addMaterial" class="addMenuItem">Material</li>
+        <li id="addCustomer" class="addMenuItem">Customer</li>
+        <li id="addVendor" class="addMenuItem">Vendor</li>
+        <li id="addAssets" class="addMenuItem">Assets</li>
+        <li id="addCatalog" class="addMenuItem">Catalog</li>
+        <li id="addReport" class="addMenuItem">Reports</li>
+    </ul>
+
+    <img src="./images/bot.png" alt="Profile image" id="chatImage">
+
+
+    <script src="./js/global.js"></script>
+    <script src="./js/dashboard.js"></script>
+</body>
+
+</html>

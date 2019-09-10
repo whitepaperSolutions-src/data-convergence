@@ -1,0 +1,97 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: url("../images/loginbackground2.jpg");
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.content{
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 50px;
+}
+
+
+.inputdata {
+    position: relative;
+}
+
+input:focus~.floating-label,
+input:not(:focus):valid~.floating-label {
+    top: -5px;
+    bottom: 10px;
+    left: 0px;
+    font-size: 11px;
+    opacity: 1;
+    color: white;
+}
+
+.inputText {
+    font-size: 14px;
+    width: 200px;
+    height: 35px;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #0e3d50;
+}
+
+.floating-label {
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 15px;
+    color: #757272;
+    transition: 0.2s ease all;
+}
+
+img{
+    border: 1px solid black;
+    border-radius: 50%;
+    padding: 10px;
+    background: #b3b1b1;
+    margin-bottom: 20px;
+}
+#login{
+    all: unset;
+    margin: 10px;
+    padding: 10px;
+    background: #0e3d50;
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+
+a{
+    all: unset;
+    font-size: 13px;
+    cursor: pointer;
+    color: #bdbdbd;
+}
+a:hover{
+    color: white;
+}
+input{
+    background: transparent;
+    color: white;
+}
+
+#error{
+    color: red; 
+    padding: 5px 7px;
+    background: rgba(255, 0, 0, 0.1);
+    border: 1px solid red;
+    font-size: 12px; 
+    display: none;
+}  

@@ -1,0 +1,63 @@
+
+/* table properties */
+#materialTable_info{
+    margin-bottom: 50px;
+}
+thead tr{
+    background: #0e3d50;
+    color: #c9c9c9;
+}
+.dataTables_length, 
+.dataTables_filter{
+    margin-bottom: 20px;
+}
+.dataTables_length select,
+.dataTables_filter input{
+    padding: 10px;
+    margin: 10px;
+}
+table.dataTable.display tbody tr.odd, 
+table.dataTable.display tbody tr.odd>.sorting_1 {
+    background: #aaa9a9;
+}
+table.dataTable.display tbody tr.even,
+ table.dataTable.display tbody tr.even>.sorting_1{
+    background: #c9c9c9;
+}
+
+
+/* ////////////// */
+/*   select check box   */
+.check{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+#selectRow{
+    width: 40px;
+    height: 20px;
+    margin-left: 15px;
+    -webkit-appearance: none;
+    outline: none;
+    background: rgb(116, 116, 116);
+    border-radius: 10px;
+    transition: 250ms;
+    position: relative;
+}
+#selectRow:checked{
+    background: #0e3d50;
+}
+#selectRow::before{
+    content: "";
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: white;
+    border-radius: 10px;
+    transition: 250ms;
+}
+#selectRow:checked::before{
+    left: 20px;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="./lib/jQuery.js"></script>
+    <link rel="stylesheet" href="./css/login.css">
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="content">
+        <div class="card">
+            <img src="./images/logo.png" alt="logo">
+            <p id="error">Incorrect User Name or Password</p>
+            <div class="inputdata">
+                <input type="text" class="inputText" required id="userName" />
+                <span class="floating-label">User Name</span>
+            </div> <br>
+            <div class="inputdata">
+                <input type="password" class="inputText" required id="password" />
+                <span class="floating-label">Password</span>
+            </div>
+            <button id="login">Login</button>
+            <div class="links">
+                <a href="#">Forgot Password</a> |
+                <a href="#">Help</a>
+            </div>
+        </div>
+    </div>
+    <script src="./js/login.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./lib/jQuery.js"></script>
+    <script src="./lib/datatable.js"></script>
+    <link rel="stylesheet" href="./lib/datatable.css">
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/table.css">
+    <link rel="stylesheet" href="./css/vendor.css">
+    <title>Vendor</title>
+</head>
+
+<body>
+
+    <ul id="profileMenu">
+        <li id="viewProfile" class="profileMenuItem">View Profile</li>
+        <li id="changePassword" class="profileMenuItem">Change Password</li>
+        <li id="logOut" class="profileMenuItem">Log Out</li>
+    </ul>
+
+    <div id="navbar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" id="closeNav">×</a>
+        <img src="./images/profile.jpg" alt="Profile image" id="profileImage">
+        <a href="./dashboard.html"><img src="./images/Dashboard.png" alt="Customer icon"> Dashboard</a>
+        <a href="./material.html"><img src="./images/material.png" alt="material icon"> Material</a>
+        <a href="./customer.html"><img src="./images/Customer.png" alt="Customer icon"> Customer</a>
+        <a href="./Vendor.html"><img src="./images/Vendor.png" alt=""> Vendor</a>
+        <a href="#"><img src="./images/Assets.png" alt=""> Assets</a>
+        <a href="#"><img src="./images/Cataloug.png" alt=""> Catalog</a>
+        <a href="#"><img src="./images/Reports.png" alt=""> Reports</a>
+        <a href="#"><img src="./images/task.png" alt=""> My Tasks</a>
+    </div>
+    <div class="headBar">
+        <button class="openbtn" id="openNav">☰ Menu</button>
+    </div>
+
+    <div class="container">
+
+        <div class="check">
+            <p>Select Rows</p>
+            <input type="checkbox" id="selectRow">
+        </div>
+
+        <table id="materialTable" class="display" style="width:100%">
+            <thead>
+                <tr>
+                    <th colspan="2">Supplier</th>
+                    <th rowspan="2">Category</th>
+                    <th rowspan="2">Location</th>
+                    <th rowspan="2">Country</th>
+                    <th rowspan="2">Contact person</th>
+                    <th colspan="2">Contact Details</th>
+                </tr>
+                <tr>
+                    <th>Number</th>
+                    <th>Name</th>
+                    <th>e-Mail</th>
+                    <th>Phone</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>12321212</td>
+                    <td> ABCVendor</td>
+                    <td>Domestic </td>
+                    <td>Gurgaon</td>
+                    <td>India</td>
+                    <td>John Doe</td>
+                    <td>johndoe@test.com</td>
+                    <td> +91 9021231212</td>
+                </tr>
+                <tr>
+                    <td>12321212</td>
+                    <td>ABCVendor</td>
+                    <td>international </td>
+                    <td>Berlin</td>
+                    <td>Germany</td>
+                    <td>John doe</td>
+                    <td>johndoe@test.com</td>
+                    <td> +91 9021231212</td>
+
+                </tr>
+                <tr>
+                    <td>12321212</td>
+                    <td> ABCVendor</td>
+                    <td>international </td>
+                    <td>Mancester</td>
+                    <td>United kingdom</td>
+                    <td>John doe</td>
+                    <td>johndoe@test.com</td>
+                    <td> +91 9021231212</td>
+                </tr>
+                <tr>
+                    <td>12321212</td>
+                    <td> ABCVendor</td>
+                    <td>Domestic </td>
+                    <td>Gurgaon</td>
+                    <td>India</td>
+                    <td>John Doe</td>
+                    <td>johndoe@test.com</td>
+                    <td> +91 9021231212</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+    </div>
+
+    <button id="add">+</button>
+    <ul id="addMenu">
+        <li id="createSingle" class="addMenuItem">Create Single</li>
+        <li id="createMultiple" class="addMenuItem">Create Multiple</li>
+    </ul>
+
+
+    <script src="./js/vendor.js"></script>
+</body>
+
+</html>

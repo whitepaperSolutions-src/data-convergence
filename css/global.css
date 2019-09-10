@@ -1,0 +1,140 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background: #d6d6d6;
+}
+.headBar{
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background: #0e3d50;
+  width: 100%;
+  height: 35px;
+  margin-bottom: 30px;
+}
+
+/* navigation  */
+
+.sidebar {
+    height: 100%;
+    width: 0px;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    background-color: #0e3d50;
+    overflow-x: hidden;
+    transition: 250ms;
+    padding-top: 20px;
+  }
+  
+  .sidebar a, 
+  .addMenuItem,
+  .profileMenuItem {
+    padding: 0px 0px 0px 30px;
+    text-decoration: none;
+    font-size: 14px;
+    color: #afacac;
+    display: block;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  .sidebar a{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .sidebar a img{
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+    margin: 7px;
+    border-radius: 50%;
+    background: #afacac;
+  }
+  
+  .sidebar a:hover, 
+  .addMenuItem:hover, 
+  .profileMenuItem:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 25px;
+    margin-left: 50px;
+  }
+  .openbtn {
+    font-size: 16px;
+    cursor: pointer;
+    background-color: transparent;
+    color: #b3b1b1;
+    padding: 5px 15px;
+    border: none;
+  }
+  #openNav{
+      position: fixed;
+      top: 0px;
+      left: 0px;
+  }
+
+  #openNav:hover{
+color: white;
+  }
+#profileImage{
+    width: 100px;
+    clip-path: circle(40%);
+    margin-left: 20%;
+    cursor: pointer;
+}
+/* ////////////// */
+
+#profileMenu{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background: #0e3d50;
+    width: 165px;
+    position: absolute;
+    top: 50px;
+    left: 150px;
+    z-index: 3;
+    display: none;
+  }
+  
+  .profileMenuItem,
+  .addMenuItem{
+      padding: 7px 25px;
+      font-size: 14px;
+  }
+
+#add{
+    all: unset;
+    background: #0e3d50;
+    color: white;
+    font-size: 25px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    cursor: pointer;
+  }
+  
+  #addMenu{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background: #0e3d50;
+    width: 150px;
+    position: fixed;
+    bottom: 90px;
+    right: 40px;
+    display: none;
+  }
