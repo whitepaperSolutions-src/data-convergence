@@ -278,6 +278,7 @@ $(document).ready(function () {
         });
     });
 
+
     // view material details page
 
     $("#viewMaterial").on("click", function () {
