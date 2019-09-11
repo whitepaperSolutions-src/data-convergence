@@ -2,6 +2,10 @@
 $(document).ready(function () {
     var Materiallist, plantList, html, i, materialDataTable, plantDataTable;
     var extMaterialNumber, extWerks, extLgort, extData;
+
+    $.LoadingOverlaySetup({
+        imageColor: "#0e3d50"
+    });
     $("body").LoadingOverlay("show");
 
     // Plant data call and table init
