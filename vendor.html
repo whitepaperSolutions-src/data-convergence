@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./lib/jQuery.js"></script>
+    <script src="./lib/datatable.js"></script>
+    <link rel="stylesheet" href="./lib/datatable.css">
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/table.css">
+    <link rel="stylesheet" href="./css/material.css">
+    <link rel="stylesheet" href="./css/vendor.css">
+    <title>vendor</title>
+
+
+
+    <script>
+    function show (max) {
+    // alert(max);
+     min=0;
+     //max=2;
+    var $table = $('#materialTable'), // the table we are using
+    $rows = $table.find('tbody tr'); // the rows we want to select
+    min = min ? min - 1 : 0;
+    max = max ? max : $rows.length;
+    $rows.hide().slice(min, max).show(); // hide all rows, then show only the range we want
+    return false;    
+    }
+    </script>
+</head>
+
+<body>
+    <ul id="profileMenu">
+        <li id="viewProfile" class="profileMenuItem">View Profile</li>
+        <li id="changePassword" class="profileMenuItem">Change Password</li>
+        <li id="logOut" class="profileMenuItem">Log Out</li>
+    </ul>
+
+    <div id="navbar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" id="closeNav">×</a>
+        <img src="./images/profile1.jpg" alt="Profile image" id="profileImage">
+        <a href="./dashboard.html"><img src="./images/Dashboard.png" alt="Customer icon"> Dashboard</a>
+        <a href="./material.html"><img src="./images/material.png" alt="material icon"> Material</a>
+        <a href="./customer.html"><img src="./images/Customer.png" alt="Customer icon"> Customer</a>
+        <a href="./Vendor.html"><img src="./images/Vendor.png" alt=""> Vendor</a>
+        <a href="#"><img src="./images/Assets.png" alt=""> Assets</a>
+        <a href="#"><img src="./images/Cataloug.png" alt=""> Catalog</a>
+        <a href="#"><img src="./images/Reports.png" alt=""> Reports</a>
+        <a href="#"><img src="./images/task.png" alt=""> My Tasks</a>
+    </div>
+
+    <div class="headBar">
+        <button class="openbtn" id="openNav">☰ Menu</button>
+    </div>
+
+
+   
+
+    <div class="container">
+
+       
+            <img src="./images/selectall.svg" alt="view material" id="materialselectAll" style="display: none">
+            <img src="./images/unselectall.svg" alt="extend material" id="materialunselectAll" style="display: none">
+            <img src="./images/extendMaterial.svg" alt="create material" id="materialExtendToSelected"
+                style="display: none">
+
+        </div>
+        <div class="check">
+        <p>Select Rows</p>
+        <input type="checkbox" id="selectRow">
+        </div>
+
+        <label for="records">Records</label>
+        <input type="text" id="ip2" onkeyup="show(this.value);"/>
+
+
+        <table id="materialTable" class="display" style="width:100%">
+            <thead>
+                <tr>
+                    <th colspan="2">Supplier</th>
+                    <th rowspan="2">Category</th>
+                    <th rowspan="2">Location</th>
+                    <th rowspan="2">Country</th>
+                    <th rowspan="2">Contact person</th>
+                    <th colspan="2">Contact Details</th>
+                </tr>
+                <tr>
+                    <th>Number</th>
+                    <th>Name</th>
+                    <th>e-Mail</th>
+                    <th>Phone</th>
+                </tr>
+            </thead>
+            <tbody>
+                    <tr>
+                        <td>12321212</td>
+                        <td> ABCVendor</td>
+                        <td>Domestic </td>
+                        <td>Gurgaon</td>
+                        <td>India</td>
+                        <td>John Doe</td>
+                        <td>johndoe@test.com</td>
+                        <td> +91 9021231212</td>
+                    </tr>
+                    <tr>
+                        <td>12321212</td>
+                        <td>ABCVendor</td>
+                        <td>international </td>
+                        <td>Berlin</td>
+                        <td>Germany</td>
+                        <td>John doe</td>
+                        <td>johndoe@test.com</td>
+                        <td> +91 9021231212</td>
+    
+                    </tr>
+                    <tr>
+                        <td>12321212</td>
+                        <td> ABCVendor</td>
+                        <td>international </td>
+                        <td>Mancester</td>
+                        <td>United kingdom</td>
+                        <td>John doe</td>
+                        <td>johndoe@test.com</td>
+                        <td> +91 9021231212</td>
+                    </tr>
+                    <tr>
+                        <td>12321212</td>
+                        <td> ABCVendor</td>
+                        <td>Domestic </td>
+                        <td>Gurgaon</td>
+                        <td>India</td>
+                        <td>John Doe</td>
+                        <td>johndoe@test.com</td>
+                        <td> +91 9021231212</td>
+                    </tr>
+    
+                </tbody>
+        </table>
+    </div>
+    
+
+    <button id="add">+</button>
+    <ul id="addMenu">
+        <li id="createSingle" class="addMenuItem">Create Single</li>
+        <li id="createMultiple" class="addMenuItem">Create Multiple</li>
+    </ul>
+
+    <!-- material create input  -->
+    <div id="materialInput">
+        <div class="inputdata">
+            <input type="text" id="materialInputName1" class="inputText" placeholder="Supplier Name">
+            <input type="text" id="materialInputName2" class="inputText" placeholder="supplier Number">
+            <input type="text" id="materialInputName3" class="inputText" placeholder="Category">
+            <input type="text" id="materialInputName4" class="inputText" placeholder="Location">
+            <input type="text" id="materialInputName5" class="inputText" placeholder="Country">
+            <input type="text" id="materialInputName6" class="inputText" placeholder="Contact person">
+            <input type="text" id="materialInputName7" class="inputText" placeholder="email">
+            <input type="text" id="materialInputName8" class="inputText" placeholder="phone">
+            
+            <button class="btnform">Submit</button>
+
+
+            <ul id="filterList">
+            </ul>
+        </div>
+        <div class="createMaterialWarning" id="createMaterialWarning">
+            <p>Material with the same name already exists,<br> please select one of the options</p>
+            <img src="./images/viewMaterial.svg" alt="view material" id="viewMaterial">
+            <img src="./images/extendMaterial.svg" alt="extend material" id="extendMaterial">
+            <img src="./images/createMaterial.svg" alt="create material" id="createMaterial">
+        </div>
+    </div>
+
+    <div id="extendMaterialTable">
+        <table id="plantTable" class="display" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Plant</th>
+                    <th>Location</th>
+                    <th>Werks</th>
+                    <th>Slocation</th>
+                </tr>
+            </thead>
+            <tbody id="plantTableBody"></tbody>
+        </table>
+        <div id="plantLocationLinks">
+            <img src="./images/selectall.svg" alt="view material" id="selectAll">
+            <img src="./images/unselectall.svg" alt="extend material" id="unselectAll">
+            <img src="./images/extendMaterial.svg" alt="create material" id="ExtendToSelected">
+        </div>
+    </div>
+
+    <script src="./js/global.js"></script>
+    <script src="./js/material.js"></script>
+    <script src="./js/vendor.js"></script>
+    
+</body>
+
+</html>
