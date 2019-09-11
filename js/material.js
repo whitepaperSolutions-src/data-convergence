@@ -2,6 +2,7 @@
 $(document).ready(function () {
     var Materiallist, plantList, html, i, materialDataTable, plantDataTable;
     var extMaterialNumber, extWerks, extLgort, extData;
+    $("body").LoadingOverlay("show");
 
     // Plant data call and table init
 
@@ -83,6 +84,7 @@ $(document).ready(function () {
             materialDataTable = $('#materialTable').DataTable({
                 "lengthMenu": [[25, 50, 100, -1], [25, 50, 100, "All"]]
             });
+            $("body").LoadingOverlay("hide");
         },
         error: function (e) {
             console.log(e);
