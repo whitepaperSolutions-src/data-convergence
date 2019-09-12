@@ -78,6 +78,7 @@ $(document).ready(function () {
         },
         error: function (e) {
             console.log(e);
+            $("body").LoadingOverlay("hide");
         }
     });
 
@@ -194,6 +195,11 @@ $(document).ready(function () {
         plantDataTable.draw(false);
     });
 
+    $('#createMaterial').on('click', function () {
+        sessionStorage.setItem("createNewMaterial", $("#materialInputName").val());
+        location.href = "./createMaterial.html";
+    });
+
     $('#plantTable tbody').on('click', 'tr', function () {
         $(this).toggleClass('plantSelct');
     });
@@ -237,7 +243,7 @@ $(document).ready(function () {
         };
         console.log(extData);
 
-
+        $("body").LoadingOverlay("show");
         // ajax post call for extend material 
         $.ajax({
             url: "http://13.126.33.197:8000/sap/opu/odata/sap/ZMASTER_MANAGEMENT_MATERIAL_SRV/",
@@ -264,10 +270,12 @@ $(document).ready(function () {
                         $("#extendMaterialTable").css('display', 'none');
                         alert(result.d.EvMessage);
                         $('#plantTable tbody tr').removeClass('plantSelct');
+                        $("body").LoadingOverlay("hide");
                     },
                     error: function (xhr, status, err) {
                         alert("material extending failed. \n Server Error");
                         console.log(err);
+                        $("body").LoadingOverlay("hide");
                     }
                 });
             }

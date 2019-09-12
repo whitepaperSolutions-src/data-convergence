@@ -6,6 +6,10 @@ $(document).ready(function () {
     var materialPlant = sessionStorage.getItem("materialPlant");
     var plantList = JSON.parse(sessionStorage.getItem("plantList"));
 
+    $.LoadingOverlaySetup({
+        imageColor: "#0e3d50"
+    });
+
     $("#plantTableBody").empty();
     for (i = 0; i < plantList.d.results.length; i++) {
         html = "<tr><td>" + plantList.d.results[i].PlantText + "</td><td>" + plantList.d.results[i].SlocationText + "</td><td>" + plantList.d.results[i].Werks + "</td><td>" + plantList.d.results[i].Slocation + "</td></tr>";
@@ -125,7 +129,7 @@ $(document).ready(function () {
         };
         console.log(extData);
 
-
+        $("body").LoadingOverlay("show");
         // ajax post call for extend material 
         $.ajax({
             url: "http://13.126.33.197:8000/sap/opu/odata/sap/ZMASTER_MANAGEMENT_MATERIAL_SRV/",
@@ -152,10 +156,12 @@ $(document).ready(function () {
                         $("#extendMaterialTable").css('display', 'none');
                         alert(result.d.EvMessage);
                         $('#plantTable tbody tr').removeClass('plantSelct');
+                        $("body").LoadingOverlay("hide");
                     },
                     error: function (xhr, status, err) {
                         alert("material extending failed. \n Server Error");
                         console.log(err);
+                        $("body").LoadingOverlay("hide");
                     }
                 });
             }
