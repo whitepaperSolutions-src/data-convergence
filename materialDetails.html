@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="./lib/jQuery.js"></script>
+    <script src="./lib/datatable.js"></script>
+    <link rel="stylesheet" href="./lib/datatable.css">
+    <link rel="stylesheet" href="./css/table.css">
     <link rel="stylesheet" href="./css/global.css">
     <link rel="stylesheet" href="./css/materialDetails.css">
     <title>Material Details</title>
@@ -113,7 +116,27 @@
         </div>
     </div>
 
+    <div id="extendMaterialTable">
+        <table id="plantTable" class="display" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Plant</th>
+                    <th>Location</th>
+                    <th>Werks</th>
+                    <th>Slocation</th>
+                </tr>
+            </thead>
+            <tbody id="plantTableBody"></tbody>
+        </table>
+        <div id="plantLocationLinks">
+            <img src="./images/selectall.svg" alt="view material" id="selectAll">
+            <img src="./images/unselectall.svg" alt="extend material" id="unselectAll">
+            <img src="./images/extendMaterial.svg" alt="create material" id="ExtendToSelected">
+        </div>
+    </div>
+
     <img src="./images/edit.svg" alt="edit material" id="editMaterial">
+    <img src="./images/extendMaterial.svg" alt="extend material" id="extendMaterial">
 
     <script src="./js/global.js"></script>
     <script src="./js/materialDetails.js"></script>

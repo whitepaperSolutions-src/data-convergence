@@ -62,14 +62,80 @@ margin: 0 0 50px 10%;
     padding: 5px;
 }
 
-#editMaterial{
+#editMaterial,
+#extendMaterial
+{
     width: 40px;
     position: fixed;
     bottom: 50px;
     right: 50px;
+    cursor: pointer;
+}
+#extendMaterial{
+    width: 20px;
+    padding: 10px;
+    bottom:100px;
+    background: #fefefe;
+    border-radius: 50%;
 }
 
 input:disabled,
 textarea:disabled{
     color: black;
+}
+
+#extendMaterialTable{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    flex-direction: column;
+    top: 0vh;
+    left: 0vw;
+    z-index: 3;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.9);
+  }
+
+#selectAll,
+#unselectAll,
+#ExtendToSelected{
+  border: none;
+  width: 25px;
+  height: 25px;
+  margin: 10px;
+  cursor: pointer;
+  color: #dfdbdb;
+  font-size: 14px;
+}
+
+.plantSelct{
+    background: #0e3d50 !important;
+    color: #aaaaaa;
+  }
+  
+  #plantTable{
+    text-align: center;
+  }
+  #plantLocationLinks{
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  #plantLocationLinks h5{
+    margin: 10px;
+    padding: 5px 15px;
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+  }
+
+
+.dataTables_scrollBody::-webkit-scrollbar {
+  background-color: rgba(43, 43, 43, 0.2);
+}
+
+.dataTables_scrollBody::-webkit-scrollbar-thumb {
+background-color: rgba(255, 255, 255, 0.2);
 }

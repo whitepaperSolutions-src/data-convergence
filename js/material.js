@@ -9,8 +9,6 @@ $(document).ready(function () {
     $("body").LoadingOverlay("show");
 
     // Plant data call and table init
-
-
     $.ajax({
         type: "GET",
         url: "http://13.126.33.197:8000/sap/opu/odata/sap/ZMASTER_MANAGEMENT_MATERIAL_SRV/es_plant_list/?$format=json",
@@ -20,7 +18,7 @@ $(document).ready(function () {
         },
         success: function (data) {
             plantList = data;
-            localStorage.setItem("plantList", JSON.stringify(data));
+            sessionStorage.setItem("plantList", JSON.stringify(data));
             $("#plantTableBody").empty();
             for (i = 0; i < plantList.d.results.length; i++) {
                 html = "<tr><td>" + plantList.d.results[i].PlantText + "</td><td>" + plantList.d.results[i].SlocationText + "</td><td>" + plantList.d.results[i].Werks + "</td><td>" + plantList.d.results[i].Slocation + "</td></tr>";
@@ -55,19 +53,6 @@ $(document).ready(function () {
     });
     // material data call and table init
 
-
-    $.ajax({
-        url: "http://13.126.33.197:8000/sap/opu/odata/sap/ZMASTER_MANAGEMENT_MATERIAL_SRV",
-        type: "GET",
-        beforeSend: function (xhr) { xhr.setRequestHeader("X-CSRF-Token", "Fetch"); },
-        complete: function (xhr) {
-            token = xhr.getResponseHeader("X-CSRF-Token");
-
-
-        }
-    });
-
-
     $.ajax({
         type: "GET",
         url: "http://13.126.33.197:8000/sap/opu/odata/sap/ZMASTER_MANAGEMENT_MATERIAL_SRV/es_material_list/?$format=json",
@@ -77,6 +62,7 @@ $(document).ready(function () {
         },
         success: function (data) {
             Materiallist = data;
+            console.log(parseInt(Materiallist.d.results[0].MaterialNo));
 
             $("#materialTableBody").empty();
             for (i = 0; i < Materiallist.d.results.length; i++) {
@@ -142,8 +128,11 @@ $(document).ready(function () {
                     break;
                 }
             }
-            // localStorage.setItem("createNewMaterial", $("#materialInputName").val());
-            //         location.href = "./createMaterial.html";
+            if (i === Materiallist.d.results.length) {
+                sessionStorage.setItem("createNewMaterial", $("#materialInputName").val());
+                location.href = "./createMaterial.html";
+            }
+
 
         }
     });
@@ -274,6 +263,7 @@ $(document).ready(function () {
                     success: function (result) {
                         $("#extendMaterialTable").css('display', 'none');
                         alert(result.d.EvMessage);
+                        $('#plantTable tbody tr').removeClass('plantSelct');
                     },
                     error: function (xhr, status, err) {
                         alert("material extending failed. \n Server Error");

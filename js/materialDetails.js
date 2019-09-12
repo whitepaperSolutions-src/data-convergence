@@ -4,6 +4,33 @@ $(document).ready(function () {
     $("textArea").attr("disabled", true);
     var materialNumber = sessionStorage.getItem("materialNumber");
     var materialPlant = sessionStorage.getItem("materialPlant");
+    var plantList = JSON.parse(sessionStorage.getItem("plantList"));
+
+    $("#plantTableBody").empty();
+    for (i = 0; i < plantList.d.results.length; i++) {
+        html = "<tr><td>" + plantList.d.results[i].PlantText + "</td><td>" + plantList.d.results[i].SlocationText + "</td><td>" + plantList.d.results[i].Werks + "</td><td>" + plantList.d.results[i].Slocation + "</td></tr>";
+
+        $("#plantTableBody").append(html);
+    }
+    plantDataTable = $('#plantTable').DataTable({
+        "paging": false,
+        "ordering": false,
+        "info": false,
+        "searching": false,
+        scrollY: '400px',
+        "columnDefs": [
+            {
+                "targets": [2],
+                "visible": false,
+                "searchable": false
+            },
+            {
+                "targets": [3],
+                "visible": false,
+                "searchable": false
+            }
+        ]
+    });
 
     $.ajax({
         type: "GET",
@@ -57,6 +84,82 @@ $(document).ready(function () {
         error: function (e) {
             console.log(e);
         }
+    });
+
+    $("body").on("keyup", function (e) {
+        if (e.keyCode == 27) {
+            $("#extendMaterialTable").css('display', 'none');
+            $('#plantTable tbody tr').removeClass('plantSelct');
+        }
+    });
+
+    $("#extendMaterial").on("click", function () {
+        $("#extendMaterialTable").css('display', 'flex');
+        plantDataTable.draw(false);
+    });
+
+    $('#plantTable tbody').on('click', 'tr', function () {
+        $(this).toggleClass('plantSelct');
+    });
+
+    $("#selectAll").on("click", function () {
+        $('#plantTable tbody tr').addClass('plantSelct');
+    });
+
+    $("#unselectAll").on("click", function () {
+        $('#plantTable tbody tr').removeClass('plantSelct');
+    });
+
+    // extend material
+    $("#ExtendToSelected").on("click", function () {
+        // read selected data from Plant data table
+        extWerks = plantDataTable.rows('.plantSelct').data()[0][1];
+        extLgort = plantDataTable.rows('.plantSelct').data()[0][2];
+
+        extData = {
+            "EvType": "",
+            "EvMessage": "",
+            "Matnr": materialNumber,
+            "Werks": extWerks,
+            "Lgort": extLgort
+        };
+        console.log(extData);
+
+
+        // ajax post call for extend material 
+        $.ajax({
+            url: "http://13.126.33.197:8000/sap/opu/odata/sap/ZMASTER_MANAGEMENT_MATERIAL_SRV/",
+            type: "GET",
+            beforeSend: function (xhr) {
+                // xhr.setRequestHeader("Authorization", "Basic " + btoa("wp_abap" + ":" + "sap@123"));
+                xhr.setRequestHeader("X-CSRF-Token", "Fetch");
+            },
+
+            complete: function (xhr) {
+                token = xhr.getResponseHeader("X-CSRF-Token");
+
+                $.ajax({
+                    url: "http://13.126.33.197:8000/sap/opu/odata/sap/ZMASTER_MANAGEMENT_MATERIAL_SRV/es_material_extend",
+                    data: JSON.stringify(extData),
+                    type: "POST",
+                    dataType: "json",
+                    contentType: "Application/json",
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader('X-CSRF-Token', token);
+                        xhr.setRequestHeader("Authorization", "Basic " + btoa("wp_abap" + ":" + "sap@123"));
+                    },
+                    success: function (result) {
+                        $("#extendMaterialTable").css('display', 'none');
+                        alert(result.d.EvMessage);
+                        $('#plantTable tbody tr').removeClass('plantSelct');
+                    },
+                    error: function (xhr, status, err) {
+                        alert("material extending failed. \n Server Error");
+                        console.log(err);
+                    }
+                });
+            }
+        });
     });
 
 });

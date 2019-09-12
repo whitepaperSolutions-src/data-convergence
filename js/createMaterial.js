@@ -1,6 +1,6 @@
 $(document).ready(function () {
-    var plantList = JSON.parse(localStorage.getItem("plantList"));
-    $("#name").val(localStorage.getItem("createNewMaterial"));
+    var plantList = JSON.parse(sessionStorage.getItem("plantList"));
+    $("#name").val(sessionStorage.getItem("createNewMaterial"));
 
     // console.log(plantList.d.results);
 
