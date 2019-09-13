@@ -35,7 +35,7 @@ $(document).ready(function () {
             }
         ]
     });
-
+    $("body").LoadingOverlay("show");
     $.ajax({
         type: "GET",
         url: "http://13.126.33.197:8000/sap/opu/odata/sap/ZMASTER_MANAGEMENT_MATERIAL_SRV/es_material_details?$filter=IvMatnr eq '" + materialNumber + "' &$format=json&$expand=material_characterstics,material_long_text",
@@ -83,10 +83,14 @@ $(document).ready(function () {
                 }
             }
             $("#longText").val(longText);
+            $("body").LoadingOverlay("hide");
 
         },
         error: function (e) {
-            console.log(e);
+            alert("SERVER ERROR: Please try after some time");
+            // console.log(e.status);
+            // console.log(e.statusText);
+            $("body").LoadingOverlay("hide");
         }
     });
 
@@ -160,7 +164,8 @@ $(document).ready(function () {
                     },
                     error: function (xhr, status, err) {
                         alert("material extending failed. \n Server Error");
-                        console.log(err);
+                        // console.log(e.status);
+                        // console.log(e.statusText);
                         $("body").LoadingOverlay("hide");
                     }
                 });

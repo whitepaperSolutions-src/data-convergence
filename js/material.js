@@ -48,7 +48,9 @@ $(document).ready(function () {
 
         },
         error: function (e) {
-            console.log(e);
+            alert("SERVER ERROR: Please try after some time");
+            // console.log(e.status);
+            // console.log(e.statusText);
         }
     });
     // material data call and table init
@@ -77,7 +79,9 @@ $(document).ready(function () {
             $("body").LoadingOverlay("hide");
         },
         error: function (e) {
-            console.log(e);
+            alert("SERVER ERROR: Please try after some time");
+            // console.log(e.status);
+            // console.log(e.statusText);
             $("body").LoadingOverlay("hide");
         }
     });
@@ -274,7 +278,8 @@ $(document).ready(function () {
                     },
                     error: function (xhr, status, err) {
                         alert("material extending failed. \n Server Error");
-                        console.log(err);
+                        // console.log(e.status);
+                        // console.log(e.statusText);
                         $("body").LoadingOverlay("hide");
                     }
                 });
@@ -298,6 +303,22 @@ $(document).ready(function () {
             }
         }
     });
+
+    // Checking for abbreviated notation and converting to a number
+    // Number("1.0e+11")
+    // 100000000000
+    // "1.0e+11".split("e+")
+    // (2) ["1.0", "11"]0: "1.0"1: "11"length: 2__proto__: Array(0)
+    // "1.0e+11".split("e-")
+    // ["1.0e+11"]0: "1.0e+11"length: 1__proto__: Array(0)
+    // "1.0e+11".split("e+").length
+    // 2
+    // "1.0e+11".split("e+")[0]
+    // "1.0"
+    // parseFloat("1.0e+11".split("e+")[0])
+    // 1
+    // isNaN(parseFloat("1.0e+11".split("e+")[0]))
+    // false
 
 
 });
