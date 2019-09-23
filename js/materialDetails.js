@@ -2,9 +2,9 @@ $(document).ready(function () {
     var newDate, longText = "";
     $("input").attr("disabled", true);
     $("textArea").attr("disabled", true);
-    var materialNumber = sessionStorage.getItem("materialNumber");
-    var materialPlant = sessionStorage.getItem("materialPlant");
-    var plantList = JSON.parse(sessionStorage.getItem("plantList"));
+    var materialNumber = localStorage.getItem("materialNumber");
+    var materialPlant = localStorage.getItem("materialPlant");
+    var plantList = JSON.parse(localStorage.getItem("plantList"));
 
     $.LoadingOverlaySetup({
         imageColor: "#0e3d50"

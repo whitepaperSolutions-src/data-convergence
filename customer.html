@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="./lib/jQuery.js"></script>
     <script src="./lib/datatable.js"></script>
+    <script src="./lib/loading.js"></script>
     <link rel="stylesheet" href="./lib/datatable.css">
     <link rel="stylesheet" href="./css/global.css">
     <link rel="stylesheet" href="./css/table.css">
@@ -44,38 +45,38 @@
             <input type="checkbox" id="selectRow">
         </div>
 
-        <table id="materialTable" class="display" style="width:100%">
+        <table id="customerTable" class="display" style="width:100%">
             <thead>
                 <tr>
                     <th colspan="2">Customer</th>
-                    <th rowspan="2">Category</th>
                     <th rowspan="2">Location</th>
                     <th rowspan="2">Country</th>
+                    <th rowspan="2">Country Code</th>
                     <th rowspan="2">Contact person</th>
                     <th colspan="2">Contact Details</th>
+                    <th colspan="2">Contact Group</th>
                 </tr>
                 <tr>
                     <th>Number</th>
                     <th>Name</th>
                     <th>e-Mail</th>
                     <th>Phone</th>
+                    <th>Code</th>
+                    <th>Name</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="customerTableBody">
                 <tr>
-                    <td>
-                        12321212
-                    </td>
+                    <td>12321212</td>
                     <td> ABC Customer</td>
                     <td>Domestic </td>
                     <td>Gurgaon</td>
                     <td>India</td>
                     <td>John Doe</td>
-                    <td>
-                        johndoe@test.com
-                    </td>
+                    <td>johndoe@test.com</td>
                     <td>+91 9021231212</td>
-
+                    <td>+91 9021231212</td>
+                    <td>+91 9021231212</td>
                 </tr>
                 <tr>
                     <td>

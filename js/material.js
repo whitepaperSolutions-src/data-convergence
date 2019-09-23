@@ -18,7 +18,7 @@ $(document).ready(function () {
         },
         success: function (data) {
             plantList = data;
-            sessionStorage.setItem("plantList", JSON.stringify(data));
+            localStorage.setItem("plantList", JSON.stringify(data));
             $("#plantTableBody").empty();
             for (i = 0; i < plantList.d.results.length; i++) {
                 html = "<tr><td>" + plantList.d.results[i].PlantText + "</td><td>" + plantList.d.results[i].SlocationText + "</td><td>" + plantList.d.results[i].Werks + "</td><td>" + plantList.d.results[i].Slocation + "</td></tr>";
@@ -94,8 +94,8 @@ $(document).ready(function () {
         } else {
             var data = materialDataTable.row(this).data();
             // alert('You clicked on ' + data[0] + '\'s row');
-            sessionStorage.setItem("materialNumber", data[0]);
-            sessionStorage.setItem("materialPlant", data[2]);
+            localStorage.setItem("materialNumber", data[0]);
+            localStorage.setItem("materialPlant", data[2]);
             location.href = "./materialDetails.html";
         }
     });
@@ -134,7 +134,7 @@ $(document).ready(function () {
                 }
             }
             if (i === Materiallist.d.results.length) {
-                sessionStorage.setItem("createNewMaterial", $("#materialInputName").val());
+                localStorage.setItem("createNewMaterial", $("#materialInputName").val());
                 location.href = "./createMaterial.html";
             }
 
@@ -200,7 +200,7 @@ $(document).ready(function () {
     });
 
     $('#createMaterial').on('click', function () {
-        sessionStorage.setItem("createNewMaterial", $("#materialInputName").val());
+        localStorage.setItem("createNewMaterial", $("#materialInputName").val());
         location.href = "./createMaterial.html";
     });
 
@@ -296,8 +296,8 @@ $(document).ready(function () {
         for (i = 0; i < Materiallist.d.results.length; i++) {
             if ($("#materialInputName").val().toUpperCase() === Materiallist.d.results[i].MaterialName.toUpperCase()) {
                 console.log(Materiallist.d.results[i]);
-                sessionStorage.setItem("materialNumber", Materiallist.d.results[i].MaterialNo);
-                sessionStorage.setItem("materialPlant", Materiallist.d.results[i].PlantText);
+                localStorage.setItem("materialNumber", Materiallist.d.results[i].MaterialNo);
+                localStorage.setItem("materialPlant", Materiallist.d.results[i].PlantText);
                 location.href = "./materialDetails.html";
                 break;
             }

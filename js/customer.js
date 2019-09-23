@@ -1,15 +1,78 @@
 $(document).ready(function () {
 
-    var table = $('#materialTable').DataTable({ paging: false });
+    $("body").LoadingOverlay("show");
+    // var table = $('#materialTable').DataTable({ paging: false });
+
+    $.ajax({
+        type: "GET",
+        url: "http://13.126.33.197:8000/sap/opu/odata/sap/ZMASTER_MANAGEMENT_MATERIAL_SRV/es_customer_master/?$format=json",
+        dataType: 'json',
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader("Authorization", "Basic " + btoa("wp_abap" + ":" + "sap@123"));
+        },
+        success: function (data) {
+            customerList = data;
+            console.log(parseInt(customerList.d.results[0].MaterialNo));
+
+            $("#customerTableBody").empty();
+            for (i = 0; i < customerList.d.results.length; i++) {
+                html = "<tr><td>" + customerList.d.results[i].CustomerNo + "</td><td>" + customerList.d.results[i].CustomerName + "</td><td>" + customerList.d.results[i].CustomerCity + " </td><td>" + customerList.d.results[i].CustomerCountry + "</td><td>" + customerList.d.results[i].CustomerCountryCode + "</td><td>" + customerList.d.results[i].ContactPersonName + "</td><td>" + customerList.d.results[i].ContactEmail + "</td><td>" + customerList.d.results[i].ContactNo + "</td><td>" + customerList.d.results[i].GroupCode + "</td><td>" + customerList.d.results[i].GroupName + "</td> </tr>";
+
+                $("#customerTableBody").append(html);
+
+            }
+            customerDataTable = $('#customerTable').DataTable({
+                "lengthMenu": [[25, 50, 100, -1], [25, 50, 100, "All"]],
+                "columnDefs": [
+                    {
+                        "targets": [9],
+                        "visible": false,
+                        "searchable": false
+                    },
+                    {
+                        "targets": [8],
+                        "visible": false,
+                        "searchable": false
+                    },
+                    {
+                        "targets": [7],
+                        "visible": false,
+                        "searchable": false
+                    },
+                    {
+                        "targets": [6],
+                        "visible": false,
+                        "searchable": false
+                    }
+                ]
+            });
+            $("body").LoadingOverlay("hide");
+        },
+        error: function (e) {
+            alert("SERVER ERROR: Please try after some time");
+            // console.log(e.status);
+            // console.log(e.statusText);
+            $("body").LoadingOverlay("hide");
+        }
+    });
 
     // table events
-    $('#materialTable tbody').on('click', 'tr', function () {
+    $('#customerTable tbody').on('click', 'tr', function () {
         if ($('#selectRow').is(":checked") === true) {
             $(this).toggleClass('selected');
 
         } else {
-            var data = table.row(this).data();
+            var data = customerDataTable.row(this).data();
             alert('You clicked on ' + data[0] + '\'s row');
+        }
+    });
+
+    // select enable and disable
+    $("#selectRow").click(function () {
+        if ($('#selectRow').is(":checked") === false) {
+            $('#customerTable tbody tr').removeClass('selected');
+        } else {
+
         }
     });
 
